@@ -1,4 +1,4 @@
-# The theme of my masterwork project
+## The theme of my masterwork project
 For my project, I choose a blog that runs with a WordPress engine.
 On the website, you are able to register, read blog posts and write comments.\
 
