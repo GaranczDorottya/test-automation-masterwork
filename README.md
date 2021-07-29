@@ -6,7 +6,7 @@ Check out the web application here: [Greenfox test-automation-blog](http://test-
 ***
 ## Manual test cases
 You can read my manual test cases by clicking on the link below\
-[Manual test cases - Google Spreadsheets]()
+[Manual test cases - Google Spreadsheets](https://docs.google.com/spreadsheets/d/1iuAAzr0N7xzElvqXV-cDUVTxn1tbk-pf_NY88QUWSG8/edit?usp=sharing)
 ***
 ## Information about my automated tests and method of running
 ***
