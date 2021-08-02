@@ -20,8 +20,15 @@ public class HomePage {
     @FindBy(xpath = "//*[@id=\"menu-item-45\"]/a")
     WebElement registerMenuButton;
 
+    @FindBy(xpath = "//*[@id=\"menu-item-44\"]/a")
+    WebElement loginMenuButton;
+
     public WebElement getRegisterMenuButton() {
         return registerMenuButton;
+    }
+
+    public WebElement getLoginMenuButton() {
+        return loginMenuButton;
     }
 
     public void open() {
