@@ -23,7 +23,7 @@ public class TC01_Registration_Fail extends BaseTest {
     @Test
     @DisplayName("#TC01_REGISTRATION_01 - Unsuccessful registration")
     @Description("Unsuccessful registration to Greenfox test-automation-blog with invalid password")
-    public void unsuccessfulRegistration() {
+    public void unsuccessfulRegistration() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         RegisterPage registerPage = new RegisterPage(driver);
         LOG.info("Opening page...");
@@ -37,5 +37,7 @@ public class TC01_Registration_Fail extends BaseTest {
         Allure.addAttachment("Failed registration with invalid password.", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
         assertThat(registerPage.getPasswordErrorMessage().isDisplayed()).isTrue();
         LOG.info("Error message displayed.");
+        assertThat(registerPage.getPasswordErrorMessage().getText()).isEqualTo("Your password must contain at least one lowercase letter, one capital letter and one number");
+        LOG.info("Content of error message verified.");
     }
 }
