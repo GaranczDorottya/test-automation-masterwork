@@ -23,7 +23,7 @@ public class TC01_Registration_Fail extends BaseTest {
     @Test
     @DisplayName("#TC01_REGISTRATION_01 - Unsuccessful registration")
     @Description("Unsuccessful registration to Greenfox test-automation-blog with invalid password")
-    public void unsuccessfulRegistration() throws InterruptedException {
+    public void unsuccessfulRegistration() {
         HomePage homePage = new HomePage(driver);
         RegisterPage registerPage = new RegisterPage(driver);
         LOG.info("Opening page...");
