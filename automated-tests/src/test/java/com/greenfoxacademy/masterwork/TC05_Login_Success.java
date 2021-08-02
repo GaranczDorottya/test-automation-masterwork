@@ -2,6 +2,7 @@ package com.greenfoxacademy.masterwork;
 
 import com.greenfoxacademy.masterwork.Pages.HomePage;
 import com.greenfoxacademy.masterwork.Pages.LoginPage;
+import com.greenfoxacademy.masterwork.Pages.UserPage;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
@@ -17,27 +18,24 @@ import java.io.ByteArrayInputStream;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Feature("Login feature")
-public class TC04_Login_Fail extends BaseTest {
-    Logger LOG = LoggerFactory.getLogger(TC04_Login_Fail.class);
+public class TC05_Login_Success extends BaseTest {
+    Logger LOG = LoggerFactory.getLogger(TC05_Login_Success.class);
 
     @Test
-    @DisplayName("#TC04_LOGIN_01 - Unsuccessful login")
-    @Description("Unsuccessful login to Greenfox test-automation-blog with empty password field")
-    public void unsuccessfulLogin() {
+    @DisplayName("#TC05_LOGIN_02 - Successful login")
+    @Description("Successful login to Greenfox test-automation-blog with valid data")
+    public void successfulLogin() {
         HomePage homePage = new HomePage(driver);
         LoginPage loginPage = new LoginPage(driver);
+        UserPage userPage = new UserPage(driver);
         LOG.info("Opening page...");
         homePage.open();
         LOG.info("Page successfully opened.");
         LOG.info("Navigating to login page.");
         homePage.getLoginMenuButton().click();
         LOG.info("Attempting login with given data.");
-        loginPage.login("TestUser", "");
-        LOG.info("Login attempt unsuccessful, waiting for error message to be displayed.");
-        Allure.addAttachment("Failed login with empty password.", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
-        assertThat(loginPage.getLoginError().isDisplayed()).isTrue();
-        LOG.info("Empty password error message displayed.");
-        assertThat(loginPage.getLoginError().getText()).isEqualTo("Error: The password field is empty.");
-        LOG.info("Content of error message verified.");
+        loginPage.login("TestUser", "JDoe1234");
+        assertThat(userPage.getTitle()).isEqualTo("Greenfox test-automation-blog – Hello, World! \uD83D\uDC4B");
+        LOG.info("Login attempt successful.");
     }
 }
