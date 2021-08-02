@@ -25,7 +25,7 @@ public class TC03_Privacy extends BaseTest {
     @Test
     @DisplayName("#TC03_PRIVACY - Using and accepting privacy statement")
     @Description("Opening Privacy Statements of Greenfox test-automation-blog then accepting them by checking the checkbox")
-    public void unsuccessfulRegistration() throws InterruptedException {
+    public void checkingAndAcceptingPrivacyStatements() {
         HomePage homePage = new HomePage(driver);
         RegisterPage registerPage = new RegisterPage(driver);
         PrivacyPage privacyPage = new PrivacyPage(driver);
