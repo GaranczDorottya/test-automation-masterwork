@@ -14,7 +14,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayInputStream;
-import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -25,7 +24,7 @@ public class TC03_Privacy extends BaseTest {
     @Test
     @DisplayName("#TC03_PRIVACY - Using and accepting privacy statement")
     @Description("Opening Privacy Statements of Greenfox test-automation-blog then accepting them by checking the checkbox")
-    public void checkingAndAcceptingPrivacyStatements() {
+    public void checkingAndAcceptingPrivacyStatements() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         RegisterPage registerPage = new RegisterPage(driver);
         PrivacyPage privacyPage = new PrivacyPage(driver);
@@ -44,11 +43,10 @@ public class TC03_Privacy extends BaseTest {
         registerPage.toPreviousPage();
         LOG.info("Register page loaded.");
         LOG.info("Checking privacy statement checkbox.");
-        registerPage.getPrivacyCheckbox().click();
+        registerPage.getEmptyPrivacyCheckbox().click();
         Allure.addAttachment("Checked Privacy Statement checkbox", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
         LOG.info("Verifying if checkbox is checked.");
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        assertThat(registerPage.getCheckboxOutlineColor()).isEqualTo("rgba(59, 161, 218, 1)");
+        assertThat(registerPage.getCheckedPrivacyCheckbox().isDisplayed()).isTrue();
         LOG.info("Privacy statements accepted.");
     }
 }

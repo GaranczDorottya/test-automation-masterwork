@@ -31,11 +31,11 @@ public class RegisterPage {
     @FindBy(id = "confirm_user_password-46")
     WebElement confirmPasswordField;
 
-    @FindBy(xpath = "//*[@id=\"um_field_46_privacy_statement\"]/div[2]/label/span[2]")
-    WebElement privacyCheckbox;
+    @FindBy(className = "um-icon-android-checkbox-outline-blank")
+    WebElement emptyPrivacyCheckbox;
 
-    @FindBy(xpath = "//*[@id=\"um_field_46_privacy_statement\"]/div[2]/label/span[1]/i")
-    WebElement privacyCheckboxOutline;
+    @FindBy(className = "um-icon-android-checkbox-outline")
+    WebElement checkedPrivacyCheckbox;
 
     @FindBy(xpath = "//*[@id=\"content\"]/article/div/div/div/form/div[1]/div/div[8]/a")
     WebElement privacyLink;
@@ -45,9 +45,6 @@ public class RegisterPage {
 
     @FindBy(xpath = "//*[@id=\"um_field_46_user_password\"]/div[3]")
     WebElement passwordErrorMessage;
-
-    @FindBy(xpath = "//*[@id=\"main\"]/header/div/h1")
-    WebElement registerHeader;
 
     public WebElement getUsernameField() {
         return usernameField;
@@ -73,12 +70,12 @@ public class RegisterPage {
         return confirmPasswordField;
     }
 
-    public WebElement getPrivacyCheckbox() {
-        return privacyCheckbox;
+    public WebElement getEmptyPrivacyCheckbox() {
+        return emptyPrivacyCheckbox;
     }
 
-    public WebElement getPrivacyCheckboxOutline() {
-        return privacyCheckboxOutline;
+    public WebElement getCheckedPrivacyCheckbox() {
+        return checkedPrivacyCheckbox;
     }
 
     public WebElement getPrivacyLink() {
@@ -93,14 +90,6 @@ public class RegisterPage {
         return passwordErrorMessage;
     }
 
-    public WebElement getRegisterHeader() {
-        return registerHeader;
-    }
-
-    public String getCheckboxOutlineColor() {
-        return privacyCheckboxOutline.getCssValue("color");
-    }
-
     public void register(String username, String firstName, String lastName, String email, String password) {
         getUsernameField().sendKeys(username);
         getFirstNameField().sendKeys(firstName);
@@ -108,7 +97,7 @@ public class RegisterPage {
         getEmailField().sendKeys(email);
         getPasswordField().sendKeys(password);
         getConfirmPasswordField().sendKeys(password);
-        getPrivacyCheckbox().click();
+        getEmptyPrivacyCheckbox().click();
         getRegisterButton().submit();
     }
 
