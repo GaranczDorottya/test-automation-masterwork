@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class RegisterPage{
+public class RegisterPage {
     WebDriver driver;
 
     public RegisterPage(WebDriver driver) {
@@ -32,7 +32,10 @@ public class RegisterPage{
     WebElement confirmPasswordField;
 
     @FindBy(xpath = "//*[@id=\"um_field_46_privacy_statement\"]/div[2]/label/span[2]")
-    WebElement acceptPrivacy;
+    WebElement privacyCheckbox;
+
+    @FindBy(xpath = "//*[@id=\"um_field_46_privacy_statement\"]/div[2]/label/span[1]/i")
+    WebElement privacyCheckboxOutline;
 
     @FindBy(xpath = "//*[@id=\"content\"]/article/div/div/div/form/div[1]/div/div[8]/a")
     WebElement privacyLink;
@@ -42,6 +45,9 @@ public class RegisterPage{
 
     @FindBy(xpath = "//*[@id=\"um_field_46_user_password\"]/div[3]")
     WebElement passwordErrorMessage;
+
+    @FindBy(xpath = "//*[@id=\"main\"]/header/div/h1")
+    WebElement registerHeader;
 
     public WebElement getUsernameField() {
         return usernameField;
@@ -67,8 +73,12 @@ public class RegisterPage{
         return confirmPasswordField;
     }
 
-    public WebElement getAcceptPrivacy() {
-        return acceptPrivacy;
+    public WebElement getPrivacyCheckbox() {
+        return privacyCheckbox;
+    }
+
+    public WebElement getPrivacyCheckboxOutline() {
+        return privacyCheckboxOutline;
     }
 
     public WebElement getPrivacyLink() {
@@ -83,14 +93,26 @@ public class RegisterPage{
         return passwordErrorMessage;
     }
 
-    public void register(String username, String firstName, String lastName, String email, String password){
+    public WebElement getRegisterHeader() {
+        return registerHeader;
+    }
+
+    public String getCheckboxOutlineColor() {
+        return privacyCheckboxOutline.getCssValue("color");
+    }
+
+    public void register(String username, String firstName, String lastName, String email, String password) {
         getUsernameField().sendKeys(username);
         getFirstNameField().sendKeys(firstName);
         getLastNameField().sendKeys(lastName);
         getEmailField().sendKeys(email);
         getPasswordField().sendKeys(password);
         getConfirmPasswordField().sendKeys(password);
-        getAcceptPrivacy().click();
+        getPrivacyCheckbox().click();
         getRegisterButton().submit();
+    }
+
+    public void toPreviousPage() {
+        driver.navigate().back();
     }
 }

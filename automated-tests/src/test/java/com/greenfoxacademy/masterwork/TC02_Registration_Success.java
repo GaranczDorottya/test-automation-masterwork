@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
 
 @Feature("Registration feature")
 public class TC02_Registration_Success extends BaseTest {
-    Logger LOG = LoggerFactory.getLogger(TC01_Registration_Fail.class);
+    Logger LOG = LoggerFactory.getLogger(TC02_Registration_Success.class);
 
     @Test
     @DisplayName("#TC02_REGISTRATION_02 - Successful registration")

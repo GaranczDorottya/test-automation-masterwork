@@ -1,7 +1,5 @@
 package com.greenfoxacademy.masterwork;
 
-import com.greenfoxacademy.masterwork.Pages.HomePage;
-import com.greenfoxacademy.masterwork.Pages.RegisterPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
