@@ -3,17 +3,12 @@ package com.greenfoxacademy.masterwork;
 import com.greenfoxacademy.masterwork.Pages.HomePage;
 import com.greenfoxacademy.masterwork.Pages.LoginPage;
 import com.greenfoxacademy.masterwork.Pages.UserPage;
-import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.ByteArrayInputStream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
