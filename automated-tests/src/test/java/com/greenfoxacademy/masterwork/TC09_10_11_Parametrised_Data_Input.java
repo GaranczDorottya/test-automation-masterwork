@@ -12,8 +12,8 @@ import org.slf4j.LoggerFactory;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Feature("Commenting feature")
-public class TC09_10_Parametrised_Data_Input extends BaseTest {
-    Logger LOG = LoggerFactory.getLogger(TC09_10_Parametrised_Data_Input.class);
+public class TC09_10_11_Parametrised_Data_Input extends BaseTest {
+    Logger LOG = LoggerFactory.getLogger(TC09_10_11_Parametrised_Data_Input.class);
 
     @BeforeAll
     public void openPageAndLogin() {
@@ -28,8 +28,8 @@ public class TC09_10_Parametrised_Data_Input extends BaseTest {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/blog_input_data.csv", numLinesToSkip = 1)
-    @DisplayName("#TC09-#TC10_DATA_INPUT_02-03 - Writing a new comment from given parameter")
-    @Description("Writing a new comment to the first and second listed posts using the content of the given CSV file.")
+    @DisplayName("#TC09-#TC10_#TC11_DATA_INPUT_02-04 - Writing new comments from given parameter")
+    @Description("Writing new comments using the content of the given CSV file.")
     public void writingCommentFromParameter(String id, String postIndex, String comment) throws InterruptedException {
 //      If you would like to add more than one comment, you have to wait about 15 seconds between submitted comments.
         if (Integer.parseInt(id) > 1) {
