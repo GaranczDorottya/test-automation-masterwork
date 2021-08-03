@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.greenfoxacademy.masterwork.TC07_Pagination" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-03T14:05:52" hostname="DESKTOP-HS8VSGI" time="2.01">
+  <properties/>
+  <testcase name="#TC07_PAGINATION - Navigating between pages" classname="com.greenfoxacademy.masterwork.TC07_Pagination" time="2.01"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 92.0.4515.107 (resolved driver for Chrome 92)
+[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Dóry\.cache\selenium\chromedriver\win32\92.0.4515.107\chromedriver.exe
+Starting ChromeDriver 92.0.4515.107 (87a818b10553a07434ea9e2b6dccf3cbe7895134-refs/branch-heads/4515@{#1634}) on port 39755
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+aug. 03, 2021 4:05:52 DU. org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+[Test worker] INFO com.greenfoxacademy.masterwork.TC06_Data_Listing - Opening page...
+[Test worker] INFO com.greenfoxacademy.masterwork.TC06_Data_Listing - Page successfully opened.
+[Test worker] INFO com.greenfoxacademy.masterwork.TC06_Data_Listing - Getting issue date of last post on current page.
+[Test worker] INFO com.greenfoxacademy.masterwork.TC06_Data_Listing - Navigating to older posts.
+[Test worker] INFO com.greenfoxacademy.masterwork.TC06_Data_Listing - Checking if correct page opened.
+[Test worker] INFO com.greenfoxacademy.masterwork.TC06_Data_Listing - Getting issue date of first post on current page.
+[Test worker] INFO com.greenfoxacademy.masterwork.TC06_Data_Listing - Checking if the current page's first post is older or has an identical date as last page's last post.
+[Test worker] INFO com.greenfoxacademy.masterwork.TC06_Data_Listing - Posts are in the correct order after pagination.
+]]></system-err>
+</testsuite>

@@ -1,5 +1,6 @@
 package com.greenfoxacademy.masterwork.Pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,9 +8,17 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
+
 public class HomePage {
     WebDriver driver;
     WebDriverWait wait;
+    List<WebElement> postsOnPage;
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -52,5 +61,20 @@ public class HomePage {
     public void open() {
         driver.get("http://test-automation-blog.greenfox.academy/");
         wait.until(ExpectedConditions.elementToBeClickable(registerMenuButton));
+    }
+
+    public Date getDateOfLastListedPost() throws ParseException {
+        postsOnPage = driver.findElements(By.id("blog-entries"));
+        WebElement issueDate = driver.findElement(By.className("meta-date"));
+        DateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy", Locale.US);
+        Date lastPostsDate = null;
+        for (int i = 0; i < postsOnPage.size(); i++) {
+            if (i == postsOnPage.size() - 1) {
+                StringBuilder temp = new StringBuilder(issueDate.getText());
+                temp.delete(0, temp.indexOf("\n") + 1);
+                lastPostsDate = dateFormat.parse(temp.toString());
+            }
+        }
+        return lastPostsDate;
     }
 }
