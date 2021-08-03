@@ -38,6 +38,9 @@ public class HomePage {
     @FindBy(xpath = "//*[@id=\"menu-item-72\"]/a")
     WebElement logoutMenuButton;
 
+    @FindBy(xpath = "//*[@id=\"menu-item-85\"]/a")
+    WebElement accountMenuButton;
+
     public WebElement getRegisterMenuButton() {
         return registerMenuButton;
     }
@@ -52,6 +55,10 @@ public class HomePage {
 
     public WebElement getLogoutMenuButton() {
         return logoutMenuButton;
+    }
+
+    public WebElement getAccountMenuButton() {
+        return accountMenuButton;
     }
 
     public String getTitle() {

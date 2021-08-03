@@ -15,7 +15,7 @@ import java.util.Date;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Feature("Pagination feature")
-public class TC07_Pagination extends BaseTest{
+public class TC07_Pagination extends BaseTest {
     Logger LOG = LoggerFactory.getLogger(TC06_Data_Listing.class);
     Date lastPostsDateOnFirstPage;
     Date firstPostsDateOnSecondPage;
@@ -23,7 +23,7 @@ public class TC07_Pagination extends BaseTest{
     @Test
     @DisplayName("#TC07_PAGINATION - Navigating between pages")
     @Description("Navigate to older posts on Greenfox test-automation-blog")
-    public void successfulDataListing() throws ParseException {
+    public void pagination() throws ParseException {
         HomePage homePage = new HomePage(driver);
         SecondBlogPage secondPage = new SecondBlogPage(driver);
         LOG.info("Opening page...");
