@@ -14,7 +14,7 @@ import java.util.Date;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Feature("")
+@Feature("Pagination feature")
 public class TC07_Pagination extends BaseTest{
     Logger LOG = LoggerFactory.getLogger(TC06_Data_Listing.class);
     Date lastPostsDateOnFirstPage;
