@@ -19,4 +19,8 @@ public class PrivacyPage {
     public WebElement getAcceptCookiesButton() {
         return acceptCookiesButton;
     }
+
+    public String getTitle() {
+        return driver.getTitle();
+    }
 }

@@ -37,7 +37,7 @@ public class TC03_Privacy extends BaseTest {
         registerPage.getPrivacyLink().click();
         privacyPage.getAcceptCookiesButton().click();
         LOG.info("Checking if link points toward another site.");
-        assertThat(driver.getTitle()).isNotEqualTo("Register – Greenfox test-automation-blog");
+        assertThat(privacyPage.getTitle()).isNotEqualTo("Register – Greenfox test-automation-blog").isEqualTo("Google");
         LOG.info("Register page left successfully.");
         LOG.info("Navigating back to register page.");
         registerPage.toPreviousPage();
