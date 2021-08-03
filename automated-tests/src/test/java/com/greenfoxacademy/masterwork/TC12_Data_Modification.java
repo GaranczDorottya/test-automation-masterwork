@@ -1,6 +1,5 @@
 package com.greenfoxacademy.masterwork;
 
-import com.greenfoxacademy.masterwork.Pages.*;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
@@ -16,15 +15,14 @@ import java.io.ByteArrayInputStream;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Feature("User data management feature")
-public class TC08_Data_Input extends BaseTest {
+public class TC12_Data_Modification extends BaseTest{
     Logger LOG = LoggerFactory.getLogger(TC08_Data_Input.class);
 
     @Test
-    @DisplayName("#TC08_DATA_INPUT_01 - Add a profile description to an existing user")
-    @Description("Add a profile description to an existing user in the edit profile menu (inside account/view profile)")
-    public void addingUserDescription() {
-        String descriptionInput = "Lorem ipsum dolor sit amet, consectetur adipiscing elit," +
-                " sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+    @DisplayName("#TC12_DATA_MODIFICATION - Modifying existing profile description")
+    @Description("Successful modification of an existing profile description in the edit profile menu (inside account/view profile)")
+    public void modifyingProfileDescription() {
+        String newDescriptionInput = "I am an edited profile description.";
         LOG.info("Opening page...");
         homePage.open();
         LOG.info("Page successfully opened.");
@@ -43,14 +41,13 @@ public class TC08_Data_Input extends BaseTest {
         LOG.info("Opening profile edit option.");
         userPage.getSettingsButton().click();
         userPage.getEditProfileMenuButton().click();
-        LOG.info("Adding profile description.");
-        userPage.getUserBioField().sendKeys(descriptionInput);
+        LOG.info("Modifying profile description.");
+        userPage.getUserBioField().clear();
+        userPage.getUserBioField().sendKeys(newDescriptionInput);
         userPage.getUpdateProfileButton().submit();
-        LOG.info("Checking if user description is displayed.");
-        assertThat(userPage.getUserBio().isDisplayed()).isTrue();
         LOG.info("Checking if user description matches input data.");
-        assertThat(userPage.getUserBio().getText()).isEqualTo(descriptionInput);
-        Allure.addAttachment("Profile description added successfully.", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
-        LOG.info("Adding profile description was successful.");
+        assertThat(userPage.getUserBio().getText()).isEqualTo(newDescriptionInput);
+        Allure.addAttachment("Profile description successfully modified.", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+        LOG.info("Profile description was successfully modified.");
     }
 }

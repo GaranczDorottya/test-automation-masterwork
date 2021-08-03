@@ -30,7 +30,7 @@ public class TC09_10_11_Parametrised_Data_Input extends BaseTest {
     @CsvFileSource(resources = "/blog_input_data.csv", numLinesToSkip = 1)
     @DisplayName("#TC09-#TC10_#TC11_DATA_INPUT_02-04 - Writing new comments from given parameter")
     @Description("Writing new comments using the content of the given CSV file.")
-    public void writingCommentFromParameter(String id, String postIndex, String comment) throws InterruptedException {
+    public void writingCommentsFromParameter(String id, String postIndex, String comment) throws InterruptedException {
 //      If you would like to add more than one comment, you have to wait about 15 seconds between submitted comments.
         if (Integer.parseInt(id) > 1) {
             LOG.info("Navigating to home page.");
