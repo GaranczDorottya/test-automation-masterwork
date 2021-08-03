@@ -2,7 +2,6 @@ package com.greenfoxacademy.masterwork;
 
 import com.greenfoxacademy.masterwork.Pages.HomePage;
 import com.greenfoxacademy.masterwork.Pages.LoginPage;
-import com.greenfoxacademy.masterwork.Pages.UserPage;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
@@ -22,7 +21,6 @@ public class TC05_Login_Success extends BaseTest {
     public void successfulLogin() {
         HomePage homePage = new HomePage(driver);
         LoginPage loginPage = new LoginPage(driver);
-        UserPage userPage = new UserPage(driver);
         LOG.info("Opening page...");
         homePage.open();
         LOG.info("Page successfully opened.");
@@ -30,7 +28,8 @@ public class TC05_Login_Success extends BaseTest {
         homePage.getLoginMenuButton().click();
         LOG.info("Attempting login with given data.");
         loginPage.login("TestUser", "JDoe1234");
-        assertThat(userPage.getTitle()).isEqualTo("Greenfox test-automation-blog – Hello, World! \uD83D\uDC4B");
+        assertThat(homePage.getTitle()).isEqualTo("Greenfox test-automation-blog – Hello, World! \uD83D\uDC4B");
+        assertThat(homePage.getLogoutMenuButton().isDisplayed()).isTrue();
         LOG.info("Login attempt successful.");
     }
 }

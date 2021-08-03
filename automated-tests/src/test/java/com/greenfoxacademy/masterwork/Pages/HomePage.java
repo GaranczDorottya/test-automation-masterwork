@@ -26,6 +26,9 @@ public class HomePage {
     @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/a")
     WebElement olderPostsButton;
 
+    @FindBy(xpath = "//*[@id=\"menu-item-72\"]/a")
+    WebElement logoutMenuButton;
+
     public WebElement getRegisterMenuButton() {
         return registerMenuButton;
     }
@@ -36,6 +39,14 @@ public class HomePage {
 
     public WebElement getOlderPostsButton() {
         return olderPostsButton;
+    }
+
+    public WebElement getLogoutMenuButton() {
+        return logoutMenuButton;
+    }
+
+    public String getTitle() {
+        return driver.getTitle();
     }
 
     public void open() {
