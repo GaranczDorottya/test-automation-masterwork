@@ -2,8 +2,6 @@ package com.greenfoxacademy.masterwork;
 
 import static org.assertj.core.api.Assertions.*;
 
-import com.greenfoxacademy.masterwork.Pages.HomePage;
-import com.greenfoxacademy.masterwork.Pages.RegisterPage;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
@@ -24,8 +22,6 @@ public class TC01_Registration_Fail extends BaseTest {
     @DisplayName("#TC01_REGISTRATION_01 - Unsuccessful registration")
     @Description("Unsuccessful registration to Greenfox test-automation-blog with invalid password")
     public void unsuccessfulRegistration() {
-        HomePage homePage = new HomePage(driver);
-        RegisterPage registerPage = new RegisterPage(driver);
         LOG.info("Opening page...");
         homePage.open();
         LOG.info("Page successfully opened.");

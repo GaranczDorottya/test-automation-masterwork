@@ -24,8 +24,6 @@ public class TC04_Login_Fail extends BaseTest {
     @DisplayName("#TC04_LOGIN_01 - Unsuccessful login")
     @Description("Unsuccessful login to Greenfox test-automation-blog with empty password field")
     public void unsuccessfulLogin() {
-        HomePage homePage = new HomePage(driver);
-        LoginPage loginPage = new LoginPage(driver);
         LOG.info("Opening page...");
         homePage.open();
         LOG.info("Page successfully opened.");

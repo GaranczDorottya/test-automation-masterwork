@@ -18,7 +18,8 @@ import java.util.Locale;
 public class HomePage {
     WebDriver driver;
     WebDriverWait wait;
-    List<WebElement> postsOnPage;
+    List<WebElement> datesOnPage;
+    List<WebElement> continueReadingButtons;
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -40,6 +41,9 @@ public class HomePage {
 
     @FindBy(xpath = "//*[@id=\"menu-item-85\"]/a")
     WebElement accountMenuButton;
+
+    @FindBy(className = "meta-date")
+    WebElement issueDate;
 
     public WebElement getRegisterMenuButton() {
         return registerMenuButton;
@@ -71,17 +75,15 @@ public class HomePage {
     }
 
     public Date getDateOfLastListedPost() throws ParseException {
-        postsOnPage = driver.findElements(By.id("blog-entries"));
-        WebElement issueDate = driver.findElement(By.className("meta-date"));
+        datesOnPage = driver.findElements(By.className("meta-date"));
         DateFormat dateFormat = new SimpleDateFormat("MMMM dd, yyyy", Locale.US);
-        Date lastPostsDate = null;
-        for (int i = 0; i < postsOnPage.size(); i++) {
-            if (i == postsOnPage.size() - 1) {
-                StringBuilder temp = new StringBuilder(issueDate.getText());
-                temp.delete(0, temp.indexOf("\n") + 1);
-                lastPostsDate = dateFormat.parse(temp.toString());
-            }
-        }
-        return lastPostsDate;
+        StringBuilder temp = new StringBuilder(datesOnPage.get(0).getText());
+        temp.delete(0, temp.indexOf("\n") + 1);
+        return dateFormat.parse(temp.toString());
+    }
+
+    public WebElement getContinueReadingButtonByIndex(String postIndex) {
+        continueReadingButtons = driver.findElements(By.linkText("Continue Reading"));
+        return continueReadingButtons.get(Integer.parseInt(postIndex));
     }
 }

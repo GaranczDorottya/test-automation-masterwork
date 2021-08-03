@@ -1,5 +1,6 @@
 package com.greenfoxacademy.masterwork;
 
+import com.greenfoxacademy.masterwork.Pages.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -19,6 +20,16 @@ public class BaseTest {
     protected WebDriver driver;
     protected WebDriverWait wait;
     private Properties properties;
+
+    protected HomePage homePage;
+    protected SecondBlogPage secondPage;
+    protected BlogPostPage blogPostPage;
+    protected DailyArchivesJuly02Page archivePage;
+    protected AccountPage accountPage;
+    protected LoginPage loginPage;
+    protected PrivacyPage privacyPage;
+    protected RegisterPage registerPage;
+    protected UserPage userPage;
 
     @BeforeAll
     public void setup() throws IOException {
@@ -40,6 +51,16 @@ public class BaseTest {
 
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, 5);
+
+        homePage = new HomePage(driver);
+        secondPage = new SecondBlogPage(driver);
+        blogPostPage = new BlogPostPage(driver);
+        archivePage = new DailyArchivesJuly02Page(driver);
+        accountPage = new AccountPage(driver);
+        loginPage = new LoginPage(driver);
+        privacyPage = new PrivacyPage(driver);
+        registerPage = new RegisterPage(driver);
+        userPage = new UserPage(driver);
     }
 
     @AfterAll

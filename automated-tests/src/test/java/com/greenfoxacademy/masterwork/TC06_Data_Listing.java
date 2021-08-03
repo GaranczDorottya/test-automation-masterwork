@@ -18,10 +18,6 @@ public class TC06_Data_Listing extends BaseTest {
     @DisplayName("#TC06_DATA_LISTING - Listing blog posts")
     @Description("List all blog posts issued 02. July 2021. on Greenfox test-automation-blog")
     public void successfulDataListing() {
-        HomePage homePage = new HomePage(driver);
-        SecondBlogPage secondPage = new SecondBlogPage(driver);
-        HelloWorldPostPage helloWorldPage = new HelloWorldPostPage(driver);
-        DailyArchivesJuly02Page archivePage = new DailyArchivesJuly02Page(driver);
         LOG.info("Opening page...");
         homePage.open();
         LOG.info("Page successfully opened.");
@@ -30,7 +26,7 @@ public class TC06_Data_Listing extends BaseTest {
         LOG.info("Opening Hello world! blog post.");
         secondPage.getContinueReadingButton().click();
         LOG.info("Filtering posts from July 2, 2021");
-        helloWorldPage.getButton2().click();
+        blogPostPage.getButton2().click();
         assertThat(archivePage.getTitle()).isEqualTo("July 2, 2021 – Greenfox test-automation-blog");
         LOG.info("Checking dates on filtered posts.");
         archivePage.checkPostsDate();

@@ -19,8 +19,6 @@ public class TC05_Login_Success extends BaseTest {
     @DisplayName("#TC05_LOGIN_02 - Successful login")
     @Description("Successful login to Greenfox test-automation-blog with valid data")
     public void successfulLogin() {
-        HomePage homePage = new HomePage(driver);
-        LoginPage loginPage = new LoginPage(driver);
         LOG.info("Opening page...");
         homePage.open();
         LOG.info("Page successfully opened.");

@@ -15,20 +15,16 @@ import java.io.ByteArrayInputStream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Feature("User data input feature")
+@Feature("Data input feature")
 public class TC08_Data_Input extends BaseTest {
-    Logger LOG = LoggerFactory.getLogger(TC06_Data_Listing.class);
+    Logger LOG = LoggerFactory.getLogger(TC08_Data_Input.class);
 
     @Test
-    @DisplayName("#TC07_DATA_INPUT_01 - Add a profile description to an existing user")
+    @DisplayName("#TC08_DATA_INPUT_01 - Add a profile description to an existing user")
     @Description("Add a profile description to an existing user in the edit profile menu (inside account/view profile)")
     public void addingUserDescription() {
         String descriptionInput = "Lorem ipsum dolor sit amet, consectetur adipiscing elit," +
                 " sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-        HomePage homePage = new HomePage(driver);
-        LoginPage loginPage = new LoginPage(driver);
-        AccountPage accountPage = new AccountPage(driver);
-        UserPage userPage = new UserPage(driver);
         LOG.info("Opening page...");
         homePage.open();
         LOG.info("Page successfully opened.");

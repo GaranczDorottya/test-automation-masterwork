@@ -25,9 +25,6 @@ public class TC02_Registration_Success extends BaseTest {
     @DisplayName("#TC02_REGISTRATION_02 - Successful registration")
     @Description("Successful registration to Greenfox test-automation-blog with valid data")
     public void successfulRegistration() {
-        HomePage homePage = new HomePage(driver);
-        RegisterPage registerPage = new RegisterPage(driver);
-        UserPage userPage = new UserPage(driver);
         LOG.info("Opening page...");
         homePage.open();
         LOG.info("Page successfully opened.");
