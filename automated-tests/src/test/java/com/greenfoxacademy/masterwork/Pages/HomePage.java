@@ -23,12 +23,19 @@ public class HomePage {
     @FindBy(xpath = "//*[@id=\"menu-item-44\"]/a")
     WebElement loginMenuButton;
 
+    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/a")
+    WebElement olderPostsButton;
+
     public WebElement getRegisterMenuButton() {
         return registerMenuButton;
     }
 
     public WebElement getLoginMenuButton() {
         return loginMenuButton;
+    }
+
+    public WebElement getOlderPostsButton() {
+        return olderPostsButton;
     }
 
     public void open() {
