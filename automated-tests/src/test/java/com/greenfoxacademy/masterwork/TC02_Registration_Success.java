@@ -35,8 +35,12 @@ public class TC02_Registration_Success extends BaseTest {
         homePage.getRegisterMenuButton().click();
         LOG.info("Attempting registration with given data.");
         registerPage.register("TestUser", "Jane", "Doe", "JaneD@gmail.com", "JDoe1234");
-        Allure.addAttachment("User page displayed after successful registration.", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+        LOG.info("Checking if user got redirected to user page.");
         assertThat(userPage.getTitle()).isEqualTo("Jane Doe | Greenfox test-automation-blog");
+        LOG.info("Checking if users name is displayed correctly.");
+        assertThat(userPage.getUsersName().isDisplayed()).isTrue();
+        assertThat(userPage.getUsersName().getText()).isEqualTo("Jane Doe");
+        Allure.addAttachment("User page displayed after successful registration.", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
         LOG.info("Registration attempt successful.");
     }
 }
