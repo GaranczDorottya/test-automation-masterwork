@@ -30,6 +30,7 @@ public class BaseTest {
     protected PrivacyPage privacyPage;
     protected RegisterPage registerPage;
     protected UserPage userPage;
+    protected LogoutPage logoutPage;
 
     @BeforeAll
     public void setup() throws IOException {
@@ -61,6 +62,7 @@ public class BaseTest {
         privacyPage = new PrivacyPage(driver);
         registerPage = new RegisterPage(driver);
         userPage = new UserPage(driver);
+        logoutPage = new LogoutPage(driver);
     }
 
     @AfterAll

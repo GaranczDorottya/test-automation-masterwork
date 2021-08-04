@@ -41,6 +41,10 @@ public class LoginPage {
         return loginError;
     }
 
+    public String getTitle(){
+        return driver.getTitle();
+    }
+
     public void login(String usernameOrEmail, String password) {
         getUsernameOfEmailField().sendKeys(usernameOrEmail);
         getPasswordField().sendKeys(password);
