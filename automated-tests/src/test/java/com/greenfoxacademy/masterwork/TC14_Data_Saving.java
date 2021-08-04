@@ -39,7 +39,6 @@ public class TC14_Data_Saving extends BaseTest {
             for (int j = 0; j < homePage.getContinueReadingButtons().size(); j++) {
                 homePage.getContinueReadingButtons().get(j).click();
                 Files.write(TC14.toPath(), blogPostPage.savePost(),
-                        StandardOpenOption.CREATE,
                         StandardOpenOption.APPEND);
                 driver.navigate().back();
             }
