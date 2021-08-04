@@ -15,14 +15,13 @@ import java.io.ByteArrayInputStream;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Feature("User data management feature")
-public class TC12_Data_Modification extends BaseTest{
-    Logger LOG = LoggerFactory.getLogger(TC12_Data_Modification.class);
+public class TC13_Deleting_data extends BaseTest {
+    Logger LOG = LoggerFactory.getLogger(TC13_Deleting_data.class);
 
     @Test
-    @DisplayName("#TC12_DATA_MODIFICATION - Modifying existing profile description")
-    @Description("Successful modification of an existing profile description in the edit profile menu (inside account/view profile)")
-    public void modifyingProfileDescription() {
-        String newDescriptionInput = "I am an edited profile description.";
+    @DisplayName("#TC13_DELETING_DATA - Delete existing profile description")
+    @Description("Successful delete of an existing profile description in the edit profile menu (inside account/view profile)")
+    public void deletingProfileDescription() {
         LOG.info("Opening page...");
         homePage.open();
         LOG.info("Page successfully opened.");
@@ -39,13 +38,15 @@ public class TC12_Data_Modification extends BaseTest{
         LOG.info("Opening profile edit option.");
         userPage.getSettingsButton().click();
         userPage.getEditProfileMenuButton().click();
-        LOG.info("Modifying profile description.");
+        LOG.info("Deleting profile description.");
         userPage.getUserBioField().clear();
-        userPage.getUserBioField().sendKeys(newDescriptionInput);
         userPage.getUpdateProfileButton().submit();
+        LOG.info("Checking if any user description displayed.");
+        assertThat(userPage.getUserBio().isDisplayed()).isFalse();
         LOG.info("Checking if user description matches input data.");
-        assertThat(userPage.getUserBio().getText()).isEqualTo(newDescriptionInput);
-        Allure.addAttachment("Profile description successfully modified.", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
-        LOG.info("Profile description was successfully modified.");
+        assertThat(userPage.getUserBio().getText()).isEmpty();
+        Allure.addAttachment("Profile description successfully deleted.", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+        LOG.info("Deleting profile description was successful.");
     }
 }
+
