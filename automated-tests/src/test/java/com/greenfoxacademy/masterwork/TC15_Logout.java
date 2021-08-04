@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @Feature("Logout feature")
 public class TC15_Logout extends BaseTest {
-    Logger LOG = LoggerFactory.getLogger(TC05_Login_Success.class);
+    Logger LOG = LoggerFactory.getLogger(TC15_Logout.class);
 
     @Test
     @DisplayName("#TC15_LOGOUT - Successful logout")

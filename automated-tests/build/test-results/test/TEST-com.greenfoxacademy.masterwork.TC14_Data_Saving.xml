@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.greenfoxacademy.masterwork.TC14_Data_Saving" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-04T18:46:55" hostname="DESKTOP-HS8VSGI" time="10.029">
+  <properties/>
+  <testcase name="#TC14_DATA_SAVING - Saving existing blog posts" classname="com.greenfoxacademy.masterwork.TC14_Data_Saving" time="10.029"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 92.0.4515.107 (resolved driver for Chrome 92)
+[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Dóry\.cache\selenium\chromedriver\win32\92.0.4515.107\chromedriver.exe
+Starting ChromeDriver 92.0.4515.107 (87a818b10553a07434ea9e2b6dccf3cbe7895134-refs/branch-heads/4515@{#1634}) on port 20658
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+aug. 04, 2021 8:46:54 DU. org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+[Test worker] INFO com.greenfoxacademy.masterwork.TC14_Data_Saving - Opening page...
+[Test worker] INFO com.greenfoxacademy.masterwork.TC14_Data_Saving - Page successfully opened.
+[Test worker] INFO com.greenfoxacademy.masterwork.TC14_Data_Saving - Saving all blog posts to text file.
+[Test worker] INFO com.greenfoxacademy.masterwork.TC14_Data_Saving - Checking if file content matches blog content.
+[Test worker] INFO com.greenfoxacademy.masterwork.TC14_Data_Saving - Blog posts successfully saved.
+]]></system-err>
+</testsuite>

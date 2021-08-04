@@ -33,7 +33,7 @@ public class HomePage {
     @FindBy(xpath = "//*[@id=\"menu-item-44\"]/a")
     WebElement loginMenuButton;
 
-    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/a")
+    @FindBy(css = ".alignright.older-posts")
     WebElement olderPostsButton;
 
     @FindBy(xpath = "//*[@id=\"menu-item-72\"]/a")
@@ -41,9 +41,6 @@ public class HomePage {
 
     @FindBy(xpath = "//*[@id=\"menu-item-85\"]/a")
     WebElement accountMenuButton;
-
-    @FindBy(className = "meta-date")
-    WebElement issueDate;
 
     public WebElement getRegisterMenuButton() {
         return registerMenuButton;
@@ -85,5 +82,9 @@ public class HomePage {
     public WebElement getContinueReadingButtonByIndex(String postIndex) {
         continueReadingButtons = driver.findElements(By.linkText("Continue Reading"));
         return continueReadingButtons.get(Integer.parseInt(postIndex));
+    }
+
+    public List<WebElement> getContinueReadingButtons() {
+        return driver.findElements(By.linkText("Continue Reading"));
     }
 }
