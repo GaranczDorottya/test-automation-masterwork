@@ -17,43 +17,42 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @Feature("User data management")
 public class TC08_Data_Input extends BaseTest {
-    Logger LOG = LoggerFactory.getLogger(TC08_Data_Input.class);
+  Logger LOG = LoggerFactory.getLogger(TC08_Data_Input.class);
 
-    @Test
-    @DisplayName("#TC08_DATA_INPUT_01")
-    @Description("Add a profile description to an existing user in the edit profile menu (inside account/view profile).")
-    public void addingUserDescription() {
-        String descriptionInput = "Lorem ipsum dolor sit amet, consectetur adipiscing elit," +
-                " sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
-        LOG.info("Opening page...");
-        homePage.open();
-        LOG.info("Page successfully opened.");
-        LOG.info("Navigating to login page.");
-        homePage.getLoginMenuButton().click();
-        LOG.info("Logging in with given data.");
-        loginPage.login("TestUser", "JDoe1234");
-        wait.until(ExpectedConditions.titleContains("Hello, World!"));
-        LOG.info("Navigating to account page.");
-        homePage.getAccountMenuButton().click();
-        LOG.info("Verifying if correct pade loaded.");
-        assertThat(accountPage.getTitle()).isEqualTo("Account – Greenfox test-automation-blog");
-        LOG.info("Navigating to user page");
-        accountPage.getViewProfileLink().click();
-        LOG.info("Verifying if correct pade loaded.");
-        assertThat(userPage.getTitle()).isEqualTo("Jane Doe | Greenfox test-automation-blog");
-        LOG.info("Opening profile edit option.");
-        userPage.getSettingsButton().click();
-        userPage.getEditProfileMenuButton().click();
-        LOG.info("Adding profile description.");
-        userPage.getUserBioField().sendKeys(descriptionInput);
-        wait.until(ExpectedConditions.visibilityOf(userPage.getUpdateProfileButton()));
-        userPage.getUpdateProfileButton().submit();
-        LOG.info("Checking if user description is displayed.");
-        wait.until(ExpectedConditions.visibilityOf(userPage.getFrownIcon()));
-        assertThat(userPage.getUserBio().isDisplayed()).isTrue();
-        LOG.info("Checking if user description matches input data.");
-        assertThat(userPage.getUserBio().getText()).isEqualTo(descriptionInput);
-        Allure.addAttachment("Profile description added successfully.", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
-        LOG.info("Adding profile description was successful.");
-    }
+  @Test
+  @DisplayName("#TC08_DATA_INPUT_01")
+  @Description("Add a profile description to an existing user in the edit profile menu (inside account/view profile).")
+  public void addingUserDescription() {
+    String descriptionInput = "Lorem ipsum dolor sit amet, consectetur adipiscing elit," + " sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+    LOG.info("Opening page...");
+    homePage.open();
+    LOG.info("Page successfully opened.");
+    LOG.info("Navigating to login page.");
+    homePage.getLoginMenuButton().click();
+    LOG.info("Logging in with given data.");
+    loginPage.login("TestUser", "JDoe1234");
+    wait.until(ExpectedConditions.titleContains("Hello, World!"));
+    LOG.info("Navigating to account page.");
+    homePage.getAccountMenuButton().click();
+    LOG.info("Verifying if correct pade loaded.");
+    assertThat(accountPage.getTitle()).isEqualTo("Account – Greenfox test-automation-blog");
+    LOG.info("Navigating to user page");
+    accountPage.getViewProfileLink().click();
+    LOG.info("Verifying if correct pade loaded.");
+    assertThat(userPage.getTitle()).isEqualTo("Jane Doe | Greenfox test-automation-blog");
+    LOG.info("Opening profile edit option.");
+    userPage.getSettingsButton().click();
+    userPage.getEditProfileMenuButton().click();
+    LOG.info("Adding profile description.");
+    userPage.getUserBioField().sendKeys(descriptionInput);
+    wait.until(ExpectedConditions.visibilityOf(userPage.getUpdateProfileButton()));
+    userPage.getUpdateProfileButton().submit();
+    LOG.info("Checking if user description is displayed.");
+    wait.until(ExpectedConditions.visibilityOf(userPage.getFrownIcon()));
+    assertThat(userPage.getUserBio().isDisplayed()).isTrue();
+    LOG.info("Checking if user description matches input data.");
+    assertThat(userPage.getUserBio().getText()).isEqualTo(descriptionInput);
+    Allure.addAttachment("Profile description added successfully.", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+    LOG.info("Adding profile description was successful.");
+  }
 }

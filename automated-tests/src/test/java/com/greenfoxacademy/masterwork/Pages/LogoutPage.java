@@ -6,24 +6,24 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LogoutPage {
-    WebDriver driver;
+  WebDriver driver;
 
-    public LogoutPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
+  public LogoutPage(WebDriver driver) {
+    this.driver = driver;
+    PageFactory.initElements(driver, this);
+  }
 
-    @FindBy(className = "wp-die-message")
-    WebElement logoutMessage;
+  @FindBy(className = "wp-die-message")
+  WebElement logoutMessage;
 
-    @FindBy(tagName = "a")
-    WebElement logoutLink;
+  @FindBy(tagName = "a")
+  WebElement logoutLink;
 
-    public WebElement getLogoutMessage() {
-        return logoutMessage;
-    }
+  public WebElement getLogoutMessage() {
+    return logoutMessage;
+  }
 
-    public WebElement getLogoutLink() {
-        return logoutLink;
-    }
+  public WebElement getLogoutLink() {
+    return logoutLink;
+  }
 }

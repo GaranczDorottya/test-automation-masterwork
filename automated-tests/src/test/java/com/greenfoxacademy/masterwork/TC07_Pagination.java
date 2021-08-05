@@ -14,27 +14,27 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @Feature("Pagination")
 public class TC07_Pagination extends BaseTest {
-    Logger LOG = LoggerFactory.getLogger(TC07_Pagination.class);
-    Date lastPostsDateOnFirstPage;
-    Date firstPostsDateOnSecondPage;
+  Logger LOG = LoggerFactory.getLogger(TC07_Pagination.class);
+  Date lastPostsDateOnFirstPage;
+  Date firstPostsDateOnSecondPage;
 
-    @Test
-    @DisplayName("#TC07_PAGINATION")
-    @Description("Navigate to older posts on Greenfox test-automation-blog.")
-    public void pagination() throws ParseException {
-        LOG.info("Opening page...");
-        homePage.open();
-        LOG.info("Page successfully opened.");
-        LOG.info("Getting issue date of last post on current page.");
-        lastPostsDateOnFirstPage = homePage.getDateOfLastListedPost();
-        LOG.info("Navigating to older posts.");
-        homePage.getOlderPostsButton().click();
-        LOG.info("Checking if correct page opened.");
-        assertThat(secondPage.getTitle()).isEqualTo("Greenfox test-automation-blog – Page 2 – Hello, World! \uD83D\uDC4B");
-        LOG.info("Getting issue date of first post on current page.");
-        firstPostsDateOnSecondPage = secondPage.getDateOfFirstListedPost();
-        LOG.info("Checking if the current page's first post is older or has an identical date as last page's last post.");
-        assertThat(lastPostsDateOnFirstPage).isAfterOrEqualTo(firstPostsDateOnSecondPage);
-        LOG.info("Posts are in the correct order after pagination.");
-    }
+  @Test
+  @DisplayName("#TC07_PAGINATION")
+  @Description("Navigate to older posts on Greenfox test-automation-blog.")
+  public void pagination() throws ParseException {
+    LOG.info("Opening page...");
+    homePage.open();
+    LOG.info("Page successfully opened.");
+    LOG.info("Getting issue date of last post on current page.");
+    lastPostsDateOnFirstPage = homePage.getDateOfLastListedPost();
+    LOG.info("Navigating to older posts.");
+    homePage.getOlderPostsButton().click();
+    LOG.info("Checking if correct page opened.");
+    assertThat(secondPage.getTitle()).isEqualTo("Greenfox test-automation-blog – Page 2 – Hello, World! \uD83D\uDC4B");
+    LOG.info("Getting issue date of first post on current page.");
+    firstPostsDateOnSecondPage = secondPage.getDateOfFirstListedPost();
+    LOG.info("Checking if the current page's first post is older or has an identical date as last page's last post.");
+    assertThat(lastPostsDateOnFirstPage).isAfterOrEqualTo(firstPostsDateOnSecondPage);
+    LOG.info("Posts are in the correct order after pagination.");
+  }
 }

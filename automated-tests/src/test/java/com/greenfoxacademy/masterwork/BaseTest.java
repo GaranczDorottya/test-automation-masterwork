@@ -17,60 +17,60 @@ import java.util.Properties;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BaseTest {
-    protected WebDriver driver;
-    protected WebDriverWait wait;
-    private Properties properties;
+  protected WebDriver driver;
+  protected WebDriverWait wait;
+  private Properties properties;
 
-    protected HomePage homePage;
-    protected SecondBlogPage secondPage;
-    protected BlogPostPage blogPostPage;
-    protected DailyArchivesJuly02Page archivePage;
-    protected AccountPage accountPage;
-    protected LoginPage loginPage;
-    protected PrivacyPage privacyPage;
-    protected RegisterPage registerPage;
-    protected UserPage userPage;
-    protected LogoutPage logoutPage;
+  protected HomePage homePage;
+  protected SecondBlogPage secondPage;
+  protected BlogPostPage blogPostPage;
+  protected DailyArchivesJuly02Page archivePage;
+  protected AccountPage accountPage;
+  protected LoginPage loginPage;
+  protected PrivacyPage privacyPage;
+  protected RegisterPage registerPage;
+  protected UserPage userPage;
+  protected LogoutPage logoutPage;
 
-    @BeforeAll
-    public void setup() throws IOException {
-        properties = new Properties();
-        InputStream propertiesStream = this.getClass().getResourceAsStream("/test.properties");
-        properties.load(propertiesStream);
-        String browser = properties.getProperty("browser");
+  @BeforeAll
+  public void setup() throws IOException {
+    properties = new Properties();
+    InputStream propertiesStream = this.getClass().getResourceAsStream("/test.properties");
+    properties.load(propertiesStream);
+    String browser = properties.getProperty("browser");
 
-        switch (browser) {
-            case "chrome" -> {
-                WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
-            }
-            case "firefox" -> {
-                WebDriverManager.firefoxdriver().setup();
-                driver = new FirefoxDriver();
-            }
-            case "edge" -> {
-                WebDriverManager.edgedriver().setup();
-                driver = new EdgeDriver();
-            }
-        }
-
-        driver.manage().window().maximize();
-        wait = new WebDriverWait(driver, 5);
-
-        homePage = new HomePage(driver);
-        secondPage = new SecondBlogPage(driver);
-        blogPostPage = new BlogPostPage(driver);
-        archivePage = new DailyArchivesJuly02Page(driver);
-        accountPage = new AccountPage(driver);
-        loginPage = new LoginPage(driver);
-        privacyPage = new PrivacyPage(driver);
-        registerPage = new RegisterPage(driver);
-        userPage = new UserPage(driver);
-        logoutPage = new LogoutPage(driver);
+    switch (browser) {
+      case "chrome" -> {
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+      }
+      case "firefox" -> {
+        WebDriverManager.firefoxdriver().setup();
+        driver = new FirefoxDriver();
+      }
+      case "edge" -> {
+        WebDriverManager.edgedriver().setup();
+        driver = new EdgeDriver();
+      }
     }
 
-    @AfterAll
-    public void tearDown() {
-        driver.quit();
-    }
+    driver.manage().window().maximize();
+    wait = new WebDriverWait(driver, 5);
+
+    homePage = new HomePage(driver);
+    secondPage = new SecondBlogPage(driver);
+    blogPostPage = new BlogPostPage(driver);
+    archivePage = new DailyArchivesJuly02Page(driver);
+    accountPage = new AccountPage(driver);
+    loginPage = new LoginPage(driver);
+    privacyPage = new PrivacyPage(driver);
+    registerPage = new RegisterPage(driver);
+    userPage = new UserPage(driver);
+    logoutPage = new LogoutPage(driver);
+  }
+
+  @AfterAll
+  public void tearDown() {
+    driver.quit();
+  }
 }
