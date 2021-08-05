@@ -15,7 +15,7 @@ import java.nio.file.StandardOpenOption;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Feature("Page content")
+@Feature("Data extracting")
 public class TC14_Data_Saving extends BaseTest {
   Logger LOG = LoggerFactory.getLogger(TC14_Data_Saving.class);
   File TC14 = new File("./src/test/TC14_saved_blogposts.txt");
