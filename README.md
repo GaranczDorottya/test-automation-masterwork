@@ -27,9 +27,9 @@ The finished tests are compatible with the following browsers:
 
 All the automated tests were based on the above linked manual test documentation.The tests were designed to be run in order, one after another. This is particularly true in the following cases because they all cover part of the same feature.
 
-1. #TC08_DATA_INPUT_01\
-2. #TC12_DATA_MODIFICATION\
-3. #TC13_DELETING_DATA
+* #TC08_DATA_INPUT_01
+* #TC12_DATA_MODIFICATION
+* #TC13_DELETING_DATA
 
 With the following test cases, you have to use different input data every time you repeat them.
 
