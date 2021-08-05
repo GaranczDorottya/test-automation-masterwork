@@ -34,15 +34,18 @@ public class TC14_Data_Saving extends BaseTest {
     LOG.info("Blog posts successfully saved.");
     addTxtFileToReport(TC14);
     LOG.info("Save file added to report.");
+    TC14.delete();
+    LOG.info("Text file has been deleted.");
   }
 
   public void saveAllPosts() throws IOException {
-    Files.newBufferedWriter(TC14.toPath(), StandardOpenOption.TRUNCATE_EXISTING);
     int pageCounter = 1;
     for (int i = 0; i < pageCounter; i++) {
       for (int j = 0; j < homePage.getContinueReadingButtons().size(); j++) {
         homePage.getContinueReadingButtons().get(j).click();
-        Files.write(TC14.toPath(), blogPostPage.savePost(), StandardOpenOption.APPEND);
+        Files.write(TC14.toPath(), blogPostPage.savePost(),
+            StandardOpenOption.CREATE,
+            StandardOpenOption.APPEND);
         driver.navigate().back();
       }
       if (homePage.getOlderPostsButton().isDisplayed()) {
