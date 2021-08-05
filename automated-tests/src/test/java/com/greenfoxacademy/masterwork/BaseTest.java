@@ -32,6 +32,15 @@ public class BaseTest {
   protected UserPage userPage;
   protected LogoutPage logoutPage;
 
+// Valid User data -->
+  protected String userName = "TestUser";
+  protected String firstName = "Jane";
+  protected String lastName = "Doe";
+  protected String email = "JaneD@gmail.com";
+  protected String password = "JDoe1234";
+// <-- Valid User data
+  protected String invalidPassword = "jdoe1234";
+
   @BeforeAll
   public void setup() throws IOException {
     properties = new Properties();

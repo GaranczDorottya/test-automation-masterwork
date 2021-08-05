@@ -24,7 +24,7 @@ public class TC15_Logout extends BaseTest {
     LOG.info("Navigating to login page.");
     homePage.getLoginMenuButton().click();
     LOG.info("Logging in with given data.");
-    loginPage.login("TestUser", "JDoe1234");
+    loginPage.login(userName, password);
     wait.until(ExpectedConditions.titleContains("Hello, World!"));
     LOG.info("Navigating to logout page.");
     homePage.getLogoutMenuButton().click();

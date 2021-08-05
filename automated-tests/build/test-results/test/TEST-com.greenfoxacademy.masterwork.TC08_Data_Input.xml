@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.greenfoxacademy.masterwork.TC08_Data_Input" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-05T10:52:50" hostname="DESKTOP-HS8VSGI" time="5.476">
+  <properties/>
+  <testcase name="#TC08_DATA_INPUT_01" classname="com.greenfoxacademy.masterwork.TC08_Data_Input" time="5.476"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 92.0.4515.107 (resolved driver for Chrome 92)
+[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Dóry\.cache\selenium\chromedriver\win32\92.0.4515.107\chromedriver.exe
+Starting ChromeDriver 92.0.4515.107 (87a818b10553a07434ea9e2b6dccf3cbe7895134-refs/branch-heads/4515@{#1634}) on port 44146
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+aug. 05, 2021 12:52:50 DU. org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+[Test worker] INFO com.greenfoxacademy.masterwork.TC08_Data_Input - Opening page...
+[Test worker] INFO com.greenfoxacademy.masterwork.TC08_Data_Input - Page successfully opened.
+[Test worker] INFO com.greenfoxacademy.masterwork.TC08_Data_Input - Navigating to login page.
+[Test worker] INFO com.greenfoxacademy.masterwork.TC08_Data_Input - Logging in with given data.
+[Test worker] INFO com.greenfoxacademy.masterwork.TC08_Data_Input - Navigating to account page.
+[Test worker] INFO com.greenfoxacademy.masterwork.TC08_Data_Input - Verifying if correct pade loaded.
+[Test worker] INFO com.greenfoxacademy.masterwork.TC08_Data_Input - Navigating to user page
+[Test worker] INFO com.greenfoxacademy.masterwork.TC08_Data_Input - Verifying if correct pade loaded.
+[Test worker] INFO com.greenfoxacademy.masterwork.TC08_Data_Input - Opening profile edit option.
+[Test worker] INFO com.greenfoxacademy.masterwork.TC08_Data_Input - Adding profile description.
+[Test worker] INFO com.greenfoxacademy.masterwork.TC08_Data_Input - Checking if user description is displayed.
+[Test worker] INFO com.greenfoxacademy.masterwork.TC08_Data_Input - Checking if user description matches input data.
+[Test worker] INFO com.greenfoxacademy.masterwork.TC08_Data_Input - Adding profile description was successful.
+]]></system-err>
+</testsuite>

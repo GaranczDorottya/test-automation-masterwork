@@ -30,7 +30,7 @@ public class TC01_Registration_Fail extends BaseTest {
     LOG.info("Navigating to register page.");
     homePage.getRegisterMenuButton().click();
     LOG.info("Attempting registration with given data.");
-    registerPage.register("TestUser", "Jane", "Doe", "JaneD@gmail.com", "jdoe1234");
+    registerPage.register(userName, firstName, lastName, email, invalidPassword);
     LOG.info("Attempt unsuccessful, waiting for error message to be displayed.");
     wait.until(ExpectedConditions.visibilityOf(registerPage.getPasswordErrorMessage()));
     Allure.addAttachment("Failed registration with invalid password.", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));

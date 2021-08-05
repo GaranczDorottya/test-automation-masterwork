@@ -29,7 +29,7 @@ public class TC04_Login_Fail extends BaseTest {
     LOG.info("Navigating to login page.");
     homePage.getLoginMenuButton().click();
     LOG.info("Attempting login with given data.");
-    loginPage.login("TestUser", "");
+    loginPage.login(userName, "");
     LOG.info("Login attempt unsuccessful, waiting for error message to be displayed.");
     wait.until(ExpectedConditions.visibilityOf(loginPage.getLoginError()));
     Allure.addAttachment("Failed login with empty password.", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));

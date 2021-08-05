@@ -30,7 +30,7 @@ public class TC08_Data_Input extends BaseTest {
     LOG.info("Navigating to login page.");
     homePage.getLoginMenuButton().click();
     LOG.info("Logging in with given data.");
-    loginPage.login("TestUser", "JDoe1234");
+    loginPage.login(userName, password);
     wait.until(ExpectedConditions.titleContains("Hello, World!"));
     LOG.info("Navigating to account page.");
     homePage.getAccountMenuButton().click();
@@ -39,7 +39,7 @@ public class TC08_Data_Input extends BaseTest {
     LOG.info("Navigating to user page");
     accountPage.getViewProfileLink().click();
     LOG.info("Verifying if correct pade loaded.");
-    assertThat(userPage.getTitle()).isEqualTo("Jane Doe | Greenfox test-automation-blog");
+    assertThat(userPage.getTitle()).isEqualTo(firstName + " " + lastName + " | Greenfox test-automation-blog");
     LOG.info("Opening profile edit option.");
     userPage.getSettingsButton().click();
     userPage.getEditProfileMenuButton().click();

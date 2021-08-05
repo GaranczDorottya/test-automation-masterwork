@@ -24,7 +24,7 @@ public class TC05_Login_Success extends BaseTest {
     LOG.info("Navigating to login page.");
     homePage.getLoginMenuButton().click();
     LOG.info("Attempting login with given data.");
-    loginPage.login("TestUser", "JDoe1234");
+    loginPage.login(userName, password);
     wait.until(ExpectedConditions.titleContains("Hello, World!"));
     assertThat(homePage.getTitle()).isEqualTo("Greenfox test-automation-blog – Hello, World! \uD83D\uDC4B");
     assertThat(homePage.getLogoutMenuButton().isDisplayed()).isTrue();
