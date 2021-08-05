@@ -45,16 +45,16 @@ To run the automated tests, you will need IntelliJ IDEA with JAVA SE 15, one of 
 ### Running the automated tests:
 1. Clone this repository to your computer
 2. Open the cloned `automated-tests` Gradle project with IntelliJ IDEA
-3. Open the terminal at the bottom of your screen
+3. Open the terminal at the bottom of your screen\
 (In most cases, this will open up a PowerShell terminal.)
 4. Type `.\gradlew clean test` into the terminal
 5. Press `Enter`
 
 If you would like to rerun the test package without failed or broken tests, change the following part of the code and files:
 
-* Change the content of the CSV file. To do this, find the `resources` folder in your opened Gradle project, open the `blog_input_data.csv` file and change the `comment` column's content. 
+* Change the content of the CSV file. To do this, find the `resources` folder in your opened Gradle project, open the `blog_input_data.csv` file and change the `comment` column's content.\ 
 (This step is needed because the user cannot send the same comments twice to the website.) 
-* Change the `String` parameters after the `Valid User data -->` comment to any other valid data.
+* Find and open the `BaseTest` class and change the `String` parameters after the `Valid User data -->` comment to any other valid data.\
 (This is needed so the test can register a new user which can be used thru out the test package again.)
 
 If you would like to run the test package with a different web driver, follow the steps below
@@ -72,7 +72,7 @@ This project already contains the allure set up so you don't have to download it
 However, if the allure folders are missing, do the following steps (assuming you have IntelliJ IDEA already opened)
 
 1. Open the terminal at the bottom of your screen
-2. Type `.\gradlew downloadAllure` into the terminal
+2. Type `.\gradlew downloadAllure` into the terminal\
 (This command will download Allure to the currently opened project)
 3. Press `Enter`
 
