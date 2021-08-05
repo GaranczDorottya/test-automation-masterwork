@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.greenfoxacademy.masterwork.TC07_Pagination" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-05T10:52:46" hostname="DESKTOP-HS8VSGI" time="1.618">
+<testsuite name="com.greenfoxacademy.masterwork.TC07_Pagination" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-05T14:17:07" hostname="DESKTOP-HS8VSGI" time="1.773">
   <properties/>
-  <testcase name="#TC07_PAGINATION" classname="com.greenfoxacademy.masterwork.TC07_Pagination" time="1.618"/>
+  <testcase name="#TC07_PAGINATION" classname="com.greenfoxacademy.masterwork.TC07_Pagination" time="1.773"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 92.0.4515.107 (resolved driver for Chrome 92)
-[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\Dóry\.cache\selenium\chromedriver\win32\92.0.4515.107\chromedriver.exe
-Starting ChromeDriver 92.0.4515.107 (87a818b10553a07434ea9e2b6dccf3cbe7895134-refs/branch-heads/4515@{#1634}) on port 12987
-Only local connections are allowed.
-Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-aug. 05, 2021 12:52:46 DU. org.openqa.selenium.remote.ProtocolHandshake createSession
+  <system-err><![CDATA[[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Using geckodriver 0.29.0 (resolved driver for Firefox 90)
+[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.gecko.driver as C:\Users\Dóry\.cache\selenium\geckodriver\win64\0.29.0\geckodriver.exe
+1628173024137	geckodriver	INFO	Listening on 127.0.0.1:29635
+1628173024629	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\DRY~1\\AppData\\Local\\Temp\\rust_mozprofileHy5JVe"
+1628173024946	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\D\xF3ry\\AppData\\Local\\Temp\\rust_mozprofileHy5JVe\\search.json.mozlz4", (void 0)))
+1628173026959	Marionette	INFO	Listening on port 63890
+1628173027283	Marionette	WARN	TLS certificate errors will be ignored for this session
+aug. 05, 2021 4:17:07 DU. org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
 [Test worker] INFO com.greenfoxacademy.masterwork.TC07_Pagination - Opening page...
 [Test worker] INFO com.greenfoxacademy.masterwork.TC07_Pagination - Page successfully opened.
@@ -19,5 +21,9 @@ INFO: Detected dialect: W3C
 [Test worker] INFO com.greenfoxacademy.masterwork.TC07_Pagination - Getting issue date of first post on current page.
 [Test worker] INFO com.greenfoxacademy.masterwork.TC07_Pagination - Checking if the current page's first post is older or has an identical date as last page's last post.
 [Test worker] INFO com.greenfoxacademy.masterwork.TC07_Pagination - Posts are in the correct order after pagination.
+1628173029326	Marionette	INFO	Stopped listening on port 63890
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
 ]]></system-err>
 </testsuite>
