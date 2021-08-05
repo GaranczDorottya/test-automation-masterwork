@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Feature("Filtering")
+@Feature("Data listing")
 public class TC06_Data_Listing extends BaseTest {
   Logger LOG = LoggerFactory.getLogger(TC06_Data_Listing.class);
 
