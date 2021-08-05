@@ -9,18 +9,19 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.ByteArrayInputStream;
 
-@Feature("Registration feature")
+@Feature("Registration")
 public class TC01_Registration_Fail extends BaseTest {
     Logger LOG = LoggerFactory.getLogger(TC01_Registration_Fail.class);
 
     @Test
-    @DisplayName("#TC01_REGISTRATION_01 - Unsuccessful registration")
-    @Description("Unsuccessful registration to Greenfox test-automation-blog with invalid password")
+    @DisplayName("#TC01_REGISTRATION_01")
+    @Description("Unsuccessful registration to Greenfox test-automation-blog with invalid password.")
     public void unsuccessfulRegistration() {
         LOG.info("Opening page...");
         homePage.open();
@@ -30,10 +31,12 @@ public class TC01_Registration_Fail extends BaseTest {
         LOG.info("Attempting registration with given data.");
         registerPage.register("TestUser", "Jane", "Doe", "JaneD@gmail.com", "jdoe1234");
         LOG.info("Attempt unsuccessful, waiting for error message to be displayed.");
+        wait.until(ExpectedConditions.visibilityOf(registerPage.getPasswordErrorMessage()));
         Allure.addAttachment("Failed registration with invalid password.", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
         assertThat(registerPage.getPasswordErrorMessage().isDisplayed()).isTrue();
         LOG.info("Invalid password error message displayed.");
         assertThat(registerPage.getPasswordErrorMessage().getText()).isEqualTo("Your password must contain at least one lowercase letter, one capital letter and one number");
         LOG.info("Content of error message verified.");
+        LOG.info("Registration unsuccessful.");
     }
 }

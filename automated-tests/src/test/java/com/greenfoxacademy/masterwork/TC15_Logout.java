@@ -4,18 +4,19 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Feature("Logout feature")
+@Feature("Logout")
 public class TC15_Logout extends BaseTest {
     Logger LOG = LoggerFactory.getLogger(TC15_Logout.class);
 
     @Test
-    @DisplayName("#TC15_LOGOUT - Successful logout")
-    @Description("Successful logout from a logged-in account at Greenfox test-automation-blog")
+    @DisplayName("#TC15_LOGOUT")
+    @Description("Successful logout from a logged-in account at Greenfox test-automation-blog.")
     public void successfulLogout() {
         LOG.info("Opening page...");
         homePage.open();
@@ -24,6 +25,7 @@ public class TC15_Logout extends BaseTest {
         homePage.getLoginMenuButton().click();
         LOG.info("Logging in with given data.");
         loginPage.login("TestUser", "JDoe1234");
+        wait.until(ExpectedConditions.titleContains("Hello, World!"));
         LOG.info("Navigating to logout page.");
         homePage.getLogoutMenuButton().click();
         assertThat(logoutPage.getLogoutMessage().isDisplayed()).isTrue();

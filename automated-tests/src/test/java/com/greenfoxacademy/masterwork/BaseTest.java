@@ -39,15 +39,19 @@ public class BaseTest {
         properties.load(propertiesStream);
         String browser = properties.getProperty("browser");
 
-        if (browser.equals("chrome")) {
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
-        } else if (browser.equals("firefox")) {
-            WebDriverManager.firefoxdriver().setup();
-            driver = new FirefoxDriver();
-        } else {
-            WebDriverManager.edgedriver().setup();
-            driver = new EdgeDriver();
+        switch (browser) {
+            case "chrome" -> {
+                WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver();
+            }
+            case "firefox" -> {
+                WebDriverManager.firefoxdriver().setup();
+                driver = new FirefoxDriver();
+            }
+            case "edge" -> {
+                WebDriverManager.edgedriver().setup();
+                driver = new EdgeDriver();
+            }
         }
 
         driver.manage().window().maximize();

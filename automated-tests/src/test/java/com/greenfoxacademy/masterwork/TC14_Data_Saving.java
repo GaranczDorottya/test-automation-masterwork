@@ -1,5 +1,6 @@
 package com.greenfoxacademy.masterwork;
 
+import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
@@ -9,19 +10,20 @@ import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Feature("Page content feature")
+@Feature("Page content")
 public class TC14_Data_Saving extends BaseTest {
     Logger LOG = LoggerFactory.getLogger(TC14_Data_Saving.class);
     File TC14 = new File("./src/test/TC14_saved_blogposts.txt");
 
     @Test
-    @DisplayName("#TC14_DATA_SAVING - Saving existing blog posts")
-    @Description("Saving the title, author, issue date, category and content of every blog post on Greenfox test-automation-blog")
-    public void deletingProfileDescription() throws IOException {
+    @DisplayName("#TC14_DATA_SAVING")
+    @Description("Saving the title, author, issue date, category and content of every blog post on Greenfox test-automation-blog.")
+    public void savingPageContentToTxtFile() throws IOException {
         LOG.info("Opening page...");
         homePage.open();
         LOG.info("Page successfully opened.");
@@ -30,10 +32,12 @@ public class TC14_Data_Saving extends BaseTest {
         LOG.info("Checking if file content matches blog content.");
         assertThat(Files.readAllLines(TC14.toPath())).isEqualTo(blogPostPage.getAllPostContent());
         LOG.info("Blog posts successfully saved.");
+        addTxtFileToReport(TC14);
+        LOG.info("Save file added to report.");
     }
 
     public void saveAllPosts() throws IOException {
-        Files.newBufferedWriter(TC14.toPath() , StandardOpenOption.TRUNCATE_EXISTING);
+        Files.newBufferedWriter(TC14.toPath(), StandardOpenOption.TRUNCATE_EXISTING);
         int pageCounter = 1;
         for (int i = 0; i < pageCounter; i++) {
             for (int j = 0; j < homePage.getContinueReadingButtons().size(); j++) {
@@ -46,6 +50,13 @@ public class TC14_Data_Saving extends BaseTest {
                 homePage.getOlderPostsButton().click();
                 pageCounter++;
             }
+        }
+    }
+
+    public void addTxtFileToReport(File file) throws IOException {
+        Path content = file.toPath();
+        try (InputStream is = Files.newInputStream(content)) {
+            Allure.addAttachment("TC14_saved_blogposts", is);
         }
     }
 }

@@ -1,6 +1,5 @@
 package com.greenfoxacademy.masterwork;
 
-import com.greenfoxacademy.masterwork.Pages.*;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
@@ -10,13 +9,13 @@ import org.slf4j.LoggerFactory;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Feature("Filtering feature")
+@Feature("Filtering")
 public class TC06_Data_Listing extends BaseTest {
     Logger LOG = LoggerFactory.getLogger(TC06_Data_Listing.class);
 
     @Test
-    @DisplayName("#TC06_DATA_LISTING - Listing blog posts")
-    @Description("List all blog posts issued 02. July 2021. on Greenfox test-automation-blog")
+    @DisplayName("#TC06_DATA_LISTING")
+    @Description("List all blog posts issued 02. July 2021. on Greenfox test-automation-blog.")
     public void successfulDataListing() {
         LOG.info("Opening page...");
         homePage.open();

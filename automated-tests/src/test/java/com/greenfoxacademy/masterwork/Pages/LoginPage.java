@@ -41,7 +41,7 @@ public class LoginPage {
         return loginError;
     }
 
-    public String getTitle(){
+    public String getTitle() {
         return driver.getTitle();
     }
 

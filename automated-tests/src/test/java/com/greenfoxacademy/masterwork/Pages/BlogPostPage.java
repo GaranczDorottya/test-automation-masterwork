@@ -16,7 +16,6 @@ public class BlogPostPage {
     List<String> savedPost;
     List<String> allSavedPosts = new ArrayList<>();
 
-
     public BlogPostPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);

@@ -13,7 +13,7 @@ public class AccountPage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//*[@id=\"content\"]/article/div/div/div/form/div[2]/div/div[3]/div/a")
+    @FindBy(linkText = "View profile")
     WebElement viewProfileLink;
 
     public WebElement getViewProfileLink() {

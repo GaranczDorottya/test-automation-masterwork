@@ -16,7 +16,7 @@ public class LogoutPage {
     @FindBy(className = "wp-die-message")
     WebElement logoutMessage;
 
-    @FindBy(xpath = "//*[@id=\"error-page\"]/div/p[2]/a")
+    @FindBy(tagName = "a")
     WebElement logoutLink;
 
     public WebElement getLogoutMessage() {

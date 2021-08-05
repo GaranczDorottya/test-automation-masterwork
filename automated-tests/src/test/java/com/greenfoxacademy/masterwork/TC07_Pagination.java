@@ -1,7 +1,5 @@
 package com.greenfoxacademy.masterwork;
 
-import com.greenfoxacademy.masterwork.Pages.HomePage;
-import com.greenfoxacademy.masterwork.Pages.SecondBlogPage;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
@@ -14,15 +12,15 @@ import java.util.Date;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Feature("Pagination feature")
+@Feature("Pagination")
 public class TC07_Pagination extends BaseTest {
     Logger LOG = LoggerFactory.getLogger(TC07_Pagination.class);
     Date lastPostsDateOnFirstPage;
     Date firstPostsDateOnSecondPage;
 
     @Test
-    @DisplayName("#TC07_PAGINATION - Navigating between pages")
-    @Description("Navigate to older posts on Greenfox test-automation-blog")
+    @DisplayName("#TC07_PAGINATION")
+    @Description("Navigate to older posts on Greenfox test-automation-blog.")
     public void pagination() throws ParseException {
         LOG.info("Opening page...");
         homePage.open();

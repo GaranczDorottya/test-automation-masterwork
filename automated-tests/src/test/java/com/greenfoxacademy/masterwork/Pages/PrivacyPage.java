@@ -13,7 +13,7 @@ public class PrivacyPage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//*[@id=\"L2AGLb\"]/div")
+    @FindBy(id = "L2AGLb")
     WebElement acceptCookiesButton;
 
     public WebElement getAcceptCookiesButton() {

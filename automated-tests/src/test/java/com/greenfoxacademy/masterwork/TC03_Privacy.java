@@ -1,8 +1,5 @@
 package com.greenfoxacademy.masterwork;
 
-import com.greenfoxacademy.masterwork.Pages.HomePage;
-import com.greenfoxacademy.masterwork.Pages.PrivacyPage;
-import com.greenfoxacademy.masterwork.Pages.RegisterPage;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
@@ -17,20 +14,20 @@ import java.io.ByteArrayInputStream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Feature("Registration feature")
+@Feature("Registration")
 public class TC03_Privacy extends BaseTest {
     Logger LOG = LoggerFactory.getLogger(TC03_Privacy.class);
 
     @Test
-    @DisplayName("#TC03_PRIVACY - Using and accepting privacy statement")
-    @Description("Opening Privacy Statements of Greenfox test-automation-blog then accepting them by checking the checkbox")
-    public void checkingAndAcceptingPrivacyStatements() throws InterruptedException {
+    @DisplayName("#TC03_PRIVACY")
+    @Description("Opening Privacy Statements of Greenfox test-automation-blog then accepting them by checking the checkbox.")
+    public void checkingAndAcceptingPrivacyStatements() {
         LOG.info("Opening page...");
         homePage.open();
         LOG.info("Page successfully opened.");
         LOG.info("Navigating to register page.");
         homePage.getRegisterMenuButton().click();
-        LOG.info("Using Privacy Statement link.");
+        LOG.info("Opening Privacy Statement link.");
         registerPage.getPrivacyLink().click();
         privacyPage.getAcceptCookiesButton().click();
         LOG.info("Checking if link points toward another site.");

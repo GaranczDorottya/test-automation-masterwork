@@ -27,19 +27,19 @@ public class HomePage {
         PageFactory.initElements(this.driver, this);
     }
 
-    @FindBy(xpath = "//*[@id=\"menu-item-45\"]/a")
+    @FindBy(id = "menu-item-45")
     WebElement registerMenuButton;
 
-    @FindBy(xpath = "//*[@id=\"menu-item-44\"]/a")
+    @FindBy(id = "menu-item-44")
     WebElement loginMenuButton;
 
     @FindBy(css = ".alignright.older-posts")
     WebElement olderPostsButton;
 
-    @FindBy(xpath = "//*[@id=\"menu-item-72\"]/a")
+    @FindBy(id = "menu-item-72")
     WebElement logoutMenuButton;
 
-    @FindBy(xpath = "//*[@id=\"menu-item-85\"]/a")
+    @FindBy(id = "menu-item-85")
     WebElement accountMenuButton;
 
     public WebElement getRegisterMenuButton() {

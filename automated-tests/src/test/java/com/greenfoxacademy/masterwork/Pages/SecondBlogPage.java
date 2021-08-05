@@ -22,7 +22,7 @@ public class SecondBlogPage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//*[@id=\"post-1\"]/div/div[2]/a")
+    @FindBy(linkText = "Continue Reading")
     WebElement firstContinueReadingButton;
 
     public WebElement getContinueReadingButton() {

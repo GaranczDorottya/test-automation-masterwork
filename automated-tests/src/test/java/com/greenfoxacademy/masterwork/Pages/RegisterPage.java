@@ -37,13 +37,13 @@ public class RegisterPage {
     @FindBy(className = "um-icon-android-checkbox-outline")
     WebElement checkedPrivacyCheckbox;
 
-    @FindBy(xpath = "//*[@id=\"content\"]/article/div/div/div/form/div[1]/div/div[8]/a")
+    @FindBy(xpath = "//a[contains(text(),'Show Privacy Statement')]")
     WebElement privacyLink;
 
     @FindBy(id = "um-submit-btn")
     WebElement registerButton;
 
-    @FindBy(xpath = "//*[@id=\"um_field_46_user_password\"]/div[3]")
+    @FindBy(className = "um-field-error")
     WebElement passwordErrorMessage;
 
     public WebElement getUsernameField() {
