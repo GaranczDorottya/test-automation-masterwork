@@ -16,7 +16,7 @@ The finished tests are compatible with the following browsers:
 * Mozilla Firefox
 * Microsoft Edge
 
-#Tested features:
+# Tested features:
 * Registration
 * Login
 * Data listing
@@ -42,7 +42,7 @@ With the following test cases, you have to use different input data every time y
 ## Method of running
 To run the automated tests, you will need IntelliJ IDEA with JAVA SE 15, one of the above-listed browsers and the blog_input_data.csv file for the parameterized tests.
 
-#Running the automated tests:
+# Running the automated tests:
 1. Clone this repository to your computer
 2. Open the cloned 'automated-tests' Gradle project with IntelliJ IDEA
 3. Open the terminal at the bottom of your screen
@@ -86,6 +86,6 @@ Allure will open a browser window containing the report of your tests.
 Here you can find all your test suites detailed. You can open them one by one and see if there are any files attached. If there are, it will appear under the test cases description.
 After you are done with reading the report, just close the browser window.
 
-#Important information for test running and reporting
+# Important information for test running and reporting
 Sometimes, IntelliJ IDEA will open another terminal that is not PowerShell.
 If the above given terminal commands are not working, try them without '.\'.
