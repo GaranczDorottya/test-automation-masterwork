@@ -34,9 +34,6 @@ All the automated tests were based on the above linked manual test documentation
 With the following test cases, use different input data every time you repeat them.
 
 * #TC02_REGISTRATION_02
-* #TC09_DATA_INPUT_02
-* #TC10_DATA_INPUT_03
-* #TC11_DATA_INPUT_04
 
 ***
 ## Method of running
@@ -50,10 +47,8 @@ To run the automated tests, you will need IntelliJ IDEA with JAVA SE 15, one of 
 4. Type `.\gradlew clean test` into the terminal
 5. Press `Enter`
 
-If you would like to rerun the test package without failed or broken tests, change the following part of the code and files:
+If you would like to rerun the test package change the following part of the code:
 
-* Change the content of the CSV file. To do this, find the `resources` folder in your opened Gradle project, open the `blog_input_data.csv` file and change the `comment` column's content.\ 
-(This step is needed because the user cannot send the same comments twice to the website.) 
 * Find and open the `BaseTest` class and change the `String` parameters after the `Valid User data -->` comment to any other valid data.\
 (This is needed so the test can register a new user which can be used thru out the test package again.)
 
