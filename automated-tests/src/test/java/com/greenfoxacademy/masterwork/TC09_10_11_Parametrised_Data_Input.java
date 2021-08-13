@@ -29,7 +29,7 @@ public class TC09_10_11_Parametrised_Data_Input extends BaseTest {
     LOG.info("Navigating to login page.");
     homePage.getLoginMenuButton().click();
     LOG.info("Logging in with given data.");
-    loginPage.login(userName, password);
+    loginPage.login(username, password);
     wait.until(ExpectedConditions.titleContains("Hello, World!"));
   }
 

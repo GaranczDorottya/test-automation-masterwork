@@ -29,7 +29,7 @@ public class TC02_Registration_Success extends BaseTest {
     LOG.info("Navigating to register page.");
     homePage.getRegisterMenuButton().click();
     LOG.info("Attempting registration with given data.");
-    registerPage.register(userName, firstName, lastName, email, password);
+    registerPage.register(username, firstName, lastName, email, password);
     wait.until(ExpectedConditions.titleContains(firstName + " " + lastName));
     LOG.info("Checking if user got redirected to user page.");
     assertThat(userPage.getTitle()).isEqualTo(firstName + " " + lastName + " | Greenfox test-automation-blog");

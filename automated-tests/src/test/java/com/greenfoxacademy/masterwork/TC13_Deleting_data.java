@@ -29,7 +29,7 @@ public class TC13_Deleting_data extends BaseTest {
     LOG.info("Navigating to login page.");
     homePage.getLoginMenuButton().click();
     LOG.info("Logging in with given data.");
-    loginPage.login(userName, password);
+    loginPage.login(username, password);
     wait.until(ExpectedConditions.titleContains("Hello, World!"));
     LOG.info("Navigating to account page.");
     homePage.getAccountMenuButton().click();

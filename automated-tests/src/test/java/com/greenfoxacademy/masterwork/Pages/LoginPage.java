@@ -14,7 +14,7 @@ public class LoginPage {
   }
 
   @FindBy(id = "user_login")
-  WebElement usernameOfEmailField;
+  WebElement usernameField;
 
   @FindBy(id = "user_pass")
   WebElement passwordField;
@@ -25,8 +25,8 @@ public class LoginPage {
   @FindBy(id = "login_error")
   WebElement loginError;
 
-  public WebElement getUsernameOfEmailField() {
-    return usernameOfEmailField;
+  public WebElement getUsernameField() {
+    return usernameField;
   }
 
   public WebElement getPasswordField() {
@@ -45,8 +45,8 @@ public class LoginPage {
     return driver.getTitle();
   }
 
-  public void login(String usernameOrEmail, String password) {
-    getUsernameOfEmailField().sendKeys(usernameOrEmail);
+  public void login(String username, String password) {
+    getUsernameField().sendKeys(username);
     getPasswordField().sendKeys(password);
     getLogInButton().submit();
   }

@@ -32,13 +32,11 @@ public class BaseTest {
   protected UserPage userPage;
   protected LogoutPage logoutPage;
 
-// Valid User data -->
-  protected String userName = "TestUser";
+  protected static String username = "TestUser" + ((int) (Math.random() * 10000));
+  protected static String email = username + "D@gmail.com";
   protected String firstName = "Jane";
   protected String lastName = "Doe";
-  protected String email = "JaneD@gmail.com";
   protected String password = "JDoe1234";
-// <-- Valid User data
   protected String invalidPassword = "jdoe1234";
 
   @BeforeAll
