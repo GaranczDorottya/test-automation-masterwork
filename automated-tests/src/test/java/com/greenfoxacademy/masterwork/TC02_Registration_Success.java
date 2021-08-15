@@ -33,6 +33,7 @@ public class TC02_Registration_Success extends BaseTest {
     wait.until(ExpectedConditions.titleContains(firstName + " " + lastName));
     LOG.info("Checking if user got redirected to user page.");
     assertThat(userPage.getTitle()).isEqualTo(firstName + " " + lastName + " | Greenfox test-automation-blog");
+    wait.until(ExpectedConditions.visibilityOf(userPage.getUsersName()));
     LOG.info("Checking if users name is displayed correctly.");
     assertThat(userPage.getUsersName().isDisplayed()).isTrue();
     assertThat(userPage.getUsersName().getText()).isEqualTo(firstName + " " + lastName);
