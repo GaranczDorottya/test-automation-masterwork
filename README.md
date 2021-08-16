@@ -1,71 +1,71 @@
-## The theme of my masterwork project
-For my project, I choose a blog that runs with a WordPress engine.
-On the website, you can register, read blog posts and write comments.
+## A masterwork projekem témája témája
+A projektmunkám alapjaként egy WorldPress motorral futó blogot választottam.
+A weboldalon lehetőség van regisztrálni, blogposztokat olvaasni és kommnteket írni. 
 
-Check out the web application here: [Greenfox test-automation-blog](http://test-automation-blog.greenfox.academy/)
+A webalkalmaás az alábbi linkre kattintva elérhető: [Greenfox test-automation-blog](http://test-automation-blog.greenfox.academy/)
 ***
-## Manual test cases
-You can read my manual test case documentation by clicking on the link below\
+## Manuális tesztestek
+A manuális teszteseteim leírása megtekinthető az alábbi linkre kattintva\
 [Manual test cases - Google Spreadsheets](https://docs.google.com/spreadsheets/d/1iuAAzr0N7xzElvqXV-cDUVTxn1tbk-pf_NY88QUWSG8/edit?usp=sharing)
 ***
-## Information about my automated tests
-My tests were written in JAVA language using IntelliJ IDEA development environment, Gradle project structure and Selenium WebDriver.
+## Információ az automata tesztekről
+A csomagban található tesztek JAVA nyelven íródtak, IntelliJ IDEA fejlesztői környezetben, Gradle projekt struktúra és Selenium WebDriver használatával.
 
-The finished tests are compatible with the following browsers:
+Az elkészült tesztek kompatibilisek az alábbi böngészőkkel:
 * Google Chrome
 * Mozilla Firefox
 * Microsoft Edge
 
-### Tested features:
-* Registration
-* Login
-* Data listing
-* User data management
-* Commenting
-* Data extracting
-* Logout
+### Tesztelt featurek:
+* Regisztráció
+* Bejelentkezés
+* Adat listázás
+* Felhasználó adatok kezelése
+* Kommentelés
+* Adat kinyerés
+* Kijelentkezés
 
 ***
-## Method of running
-To run the automated tests, you will need IntelliJ IDEA with JAVA SE 15, one of the above-listed browsers and the blog_input_data.csv file for the parameterized tests.
+## A tesztek futtatsnak módszere
+Az automata tesztek futtatsához szükségünk van IntelliJ IDEA-ra JAVA SE 15-tel, a fent listázott böngészők egyikére és a blog_input_data.csv filera.
 
-### Running the automated tests:
-1. Clone this repository to your computer
-2. Open the cloned `automated-tests` Gradle project with IntelliJ IDEA
-3. Open the terminal at the bottom of your screen\
-(In most cases, this will open up a PowerShell terminal.)
-4. Type `.\gradlew clean test` into the terminal
-5. Press `Enter`
+### Az automata tesztek futtatása:
+1. Klónozd ezt a repositoryt a számítógépedre
+2. Nyisd meg a klónozott `automated-tests` Gradle projectet IntelliJ IDEA használatával
+3. Nyisd meg a terminált a kijelző alján\
+(Az esetek többségében ez egy PowerShell terminált fog megnyitni.)
+4. Írd be a következőt a terminálba: `.\gradlew clean test`
+5. Nyomd meg az `Enter` gombot
 
-If you would like to run the test package with a different web driver, follow the steps below
+Amennyiben a csomagot másik böngészővel szeretnénk futtatni, kövessük az alábbi lépéseket:
 
-1. Open the `automated-tests` Gradle project with IntelliJ IDEA
-2. Find and open `test.properties` file in the `resources` folder
-3. Change `chrome` to `firefox` or `edge`
-4. Close the `test.properties` file
-5. Run your tests by implementing steps 3 - 5 from `Running the automated tests` above.
+1. Nyisd meg az `automated-tests` Gradle projectet IntelliJ IDEA-val
+2. Keresd meg és nyisd meg a `test.properties` filet a `resources` mappában
+3. Helyettesítsd a `chrome` szövegrészt `firefox`-ra vagy `edge`-re
+4. Zárd be a `test.properties` filet
+5. Futtasd a teszteket követve `Az automata tesztek futtatása` részt a 3. ponttól kezdve
 ***
-## Reporting method and how you can access reports
-For the test reporting part of my project, I used Allure. Allure is an open-source framework designed to create test execution reports that are clear to everyone.
+## Reportálási módszer és a reportok elérése
+A teszt eredmények reportálásához Alluret használok. Az Allure egy nyílt forrású program váz, amely arra lett tervezve, hogy a teszt reportok mindenki számára egyértelmúek lehessenek.
 
-This project already contains the allure set up so you don't have to download it.
-However, if the allure folders are missing, do the following steps (assuming you have IntelliJ IDEA already opened)
+Eza kész projekt már tartalmazza az alluret, így nem szükséges külön letöltenünk.
+Amennyiben valamilyen oknál fogva az allure mappák hiányoznak a projektből, a következő lépésekkel pótolhatjuk azokat (feltételezve, hogy az IntelliJ már meg van nyiva).
 
-1. Open the terminal at the bottom of your screen
-2. Type `.\gradlew downloadAllure` into the terminal\
-(This command will download Allure to the currently opened project)
-3. Press `Enter`
+1. Nyisd meg a terminált a képernyő alján
+2. Írd be a következőt a terminálba`.\gradlew downloadAllure`\
+(Ez a parancs letölti az alluret a jelenleg megnyitott projektbe)
+3. Nyomd meg az `Enter` billentyűt
 
-To get an Allure test report, run your test according to `Method of running`. When the tests are finished, do the following steps.
+Hogy megkapjuk az Allure teszt reportokat, futtassuk a tesztkeinket a `A tesztek futtatásának módszere` alapján. Amikor a tesztek lefutottak, kövessük az alábbi lépéseket.
 
-1. Open the terminal at the bottom of your screen
-2. Type `.\gradlew allureServe` into the terminal
-3. Press `Enter`
+1. Nyisd meg a terminált a képernyő alján
+2. Írd be a következőt a terminálba`.\gradlew allureServe`
+3. Nyomd meg az `Enter` billentyűt
 
-Allure will open a browser window containing the report of your tests.
-Here you can find all your test suites detailed. You can open them one by one and see if there are any files attached. If there are, it will appear under the test cases description.
-After you are done with reading the report, just close the browser window.
+A fentieket követően az Allure megnyit egy, a reportokat tartalmazó böngésző ablakot.
+Itt megtlálhatók  a tesztesetek részletezve. Lehetőségv van egyesével megnyitni a reportokat, ahol láthatjuk az esetlegesen csatolt fileokat. A csatolt fileok a teszteset leírása alatt találhatók.
+Amikor végeztük a report olvasásával, egyszerűen csak zárjuk be a böngésző ablakot.
 
-### Important information for test running and reporting
-Sometimes, IntelliJ IDEA will open another terminal that is not PowerShell.
-If the above given terminal commands are not working, try them without `.\`.
+### Fontos információ a tesztek futtatásához és a reportáláshoz
+Néha az IntelliJ IDEA más terminált használ, mint a PowerShell.
+Amennyiben a fenti terminál parancsok nem működnek, próbáljuk meg őkeet `.\` nélkül futtatni.
